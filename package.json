@@ -1,0 +1,23 @@
+{
+  "name": "Grapevine",
+  "version": "0.0.1",
+  "description": "A real-time message board system",
+  "contributors": [
+    "James Matthews (http://github.com/jfmatt)",
+    "Louis Fettet (http://github.com/louisfettet)"
+  ],
+  "scripts": {
+    "start": "node ./src/server"
+  },
+  "main": "./src/server",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jfmatt/grapevine.git"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "dependencies": {
+    "express": "~3.4.8"
+  }
+}
