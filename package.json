@@ -7,6 +7,7 @@
     "Louis Fettet (http://github.com/louisfettet)"
   ],
   "scripts": {
+		"prepublish": "bower install",
     "start": "node ./src/server"
   },
   "main": "./src/server",
