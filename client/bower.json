@@ -1,0 +1,6 @@
+{
+  "name": "Grapevine-Client",
+  "dependencies": {
+    "socket.io-client": "~0.9.16"
+  }
+}
