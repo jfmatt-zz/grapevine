@@ -1,6 +1,13 @@
 {
   "name": "Grapevine-Client",
   "dependencies": {
-    "socket.io-client": "~0.9.16"
+    "socket.io-client": "~0.9.16",
+    "angular": "~1.2.10"
+  },
+  "devDependencies": {
+    "requirejs": "~2.1.10",
+    "bootstrap-css-only": "~3.1.0",
+    "angular-bootstrap": "~0.10.0",
+    "almond": "~0.2.9"
   }
 }
