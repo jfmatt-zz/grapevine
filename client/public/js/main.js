@@ -1,7 +1,7 @@
 require.config({
 	paths: {
-		"angular": "bower/angular/angular",
-		"almond": "bower/almond/almond"
+		"angular": "../bower/angular/angular",
+		"almond": "../bower/almond/almond"
 	},
 
 	shim: {

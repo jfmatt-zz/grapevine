@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "prepublish": "bower install",
-    "start": "node ./src/server"
+    "start": "node ./server/server"
   },
   "main": "./src/server",
   "repository": {
@@ -22,12 +22,15 @@
     "express": "~3.4.8",
     "socket.io": "~0.9.16",
     "lodash": "~2.4.1",
-    "pg": "~2.11.1"
+    "pg": "~2.11.1",
+    "ejs": "~0.8.5"
   },
   "devDependencies": {
     "gulp": "~3.5.2",
     "gulp-requirejs": "~0.1.3",
     "ngmin": "~0.4.0",
-    "gulp-requirejs-replace-script": "~1.0.3"
+    "gulp-requirejs-replace-script": "~1.0.3",
+    "q": "~1.0.0",
+    "gulp-clean": "~0.2.4"
   }
 }

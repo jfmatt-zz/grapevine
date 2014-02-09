@@ -3,18 +3,27 @@ var path = require('path'),
     gulp = require('gulp'),
     rjs = require('gulp-requirejs'),
     ngmin = require('ngmin').annotate,
+    Q = require('q'),
 
     replaceRequire = require('gulp-requirejs-replace-script'),
     gulpStream = require('gulp-stream'),
+    gulpClean = require('gulp-clean'),
 
-    srcDir = 'client/src',
-    buildDir = 'client/build'
+    srcDir = 'client/',
+    buildDir = 'client/build/',
+    jsDir = 'public/js/',
+    viewDir = 'views/'
+
+gulp.task('clean', function () {
+	return gulp.src(buildDir, {read: false})
+		.pipe(gulpClean())
+})
 
 gulp.task('requirejs', function () {
 	return rjs({
-		baseUrl: srcDir,
+		baseUrl: srcDir + jsDir,
 
-		mainConfigFile: srcDir +  '/main.js',
+		mainConfigFile: srcDir + jsDir + 'main.js',
 
 		name: 'almond',
 		insertRequire: ['main'],
@@ -27,16 +36,17 @@ gulp.task('requirejs', function () {
 			return ngmin(contents)
 		}
 	})
-	.pipe(gulp.dest(buildDir))
+	.pipe(gulp.dest(buildDir + jsDir))
 })
 
 gulp.task('index', function () {
-	return gulp.src(srcDir + '/index.html')
-		.pipe(gulpStream())	
+	return gulp.src(srcDir + viewDir + '*.html')
 		.pipe(replaceRequire())
-		.pipe(gulp.dest(buildDir))
+		.pipe(gulp.dest(buildDir + viewDir))
 })
 
-gulp.task('default', ['requirejs', 'index'], function () {
+gulp.task('build', ['requirejs', 'index'])
 
+gulp.task('default', ['clean'], function () {
+	gulp.start('build')
 })
