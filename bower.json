@@ -2,7 +2,8 @@
   "name": "Grapevine-Client",
   "dependencies": {
     "socket.io-client": "~0.9.16",
-    "angular": "~1.2.10"
+    "angular": "~1.2.10",
+    "angular-route": "~1.2.12"
   },
   "devDependencies": {
     "requirejs": "~2.1.10",
