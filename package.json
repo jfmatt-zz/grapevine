@@ -7,7 +7,7 @@
     "Louis Fettet (http://github.com/louisfettet)"
   ],
   "scripts": {
-    "prepublish": "bower install",
+    "postinstall": "./node_modules/bower/bin/bower install",
     "start": "node ./server/server"
   },
   "main": "./src/server",
@@ -23,7 +23,8 @@
     "socket.io": "~0.9.16",
     "lodash": "~2.4.1",
     "pg": "~2.11.1",
-    "ejs": "~0.8.5"
+    "ejs": "~0.8.5",
+    "bower": "~1.2.8"
   },
   "devDependencies": {
     "gulp": "~3.5.2",

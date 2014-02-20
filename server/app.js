@@ -20,6 +20,8 @@ app.configure(function () {
 		.get('/', function (req, res) {
 			res.render('index.html', app.config)
 		})
+
+	require('./modules')(app, io)
 	
 	if (app.config.staticDir) {
 		app
