@@ -21,7 +21,7 @@ app.configure(function () {
 			res.render('index.html', app.config)
 		})
 
-	require('./modules')(app, io)
+	require('./modules')(app, io, '/api')
 	
 	if (app.config.staticDir) {
 		app

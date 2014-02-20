@@ -2,7 +2,9 @@ var fs = require('fs'),
 
     express = require('express')
 
-module.exports = function (app, io) {
+module.exports = function (app, io, baseUrl) {
+	baseUrl = baseUrl || ''
+
 	fs.readdir(__dirname, function (err, ms) {
 		ms.forEach(function (m) {
 			if (m.substring(0,8) === 'index.js')
@@ -23,7 +25,7 @@ module.exports = function (app, io) {
 			}
 			if (mod.routes) {
 				mod.routes(subapp, subio)
-				app.use('/' + m, subapp)
+				app.use(baseUrl + '/' + m, subapp)
 				console.log("Routes loaded for " + m)
 			}
 		})
