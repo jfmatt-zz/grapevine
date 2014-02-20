@@ -11,6 +11,6 @@ var _ = require('lodash'),
 
 config.env = env;
 
-_.each(config, function (val, key) {
-	config[key] = process.env[key] || config[key]
+_.each(config.global, function (val, key) {
+	config.global[key] = process.env[key] || config.global[key]
 })

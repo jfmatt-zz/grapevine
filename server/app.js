@@ -15,7 +15,7 @@ app.config = require('./config')
 app.configure(function () {
 	if (app.config.views)
 		app
-		.set('views', app.config.views)
+		.set('views', app.config.global.views)
 		.engine('html', ejs.renderFile)
 		.get('/', function (req, res) {
 			res.render('index.html', app.config)
@@ -29,9 +29,7 @@ app.configure(function () {
 	}
 })
 
-console.log(app.config.DATABASE_URL)
-
 app.start = function () {
-	server.listen(app.config.PORT)
-	console.log("Grapevine running in " + app.config.env + " mode on port " + app.config.PORT)
+	server.listen(app.config.global.PORT)
+	console.log("Grapevine running in " + app.config.env + " mode on port " + app.config.global.PORT)
 }

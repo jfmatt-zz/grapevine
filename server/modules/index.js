@@ -12,7 +12,9 @@ module.exports = function (app, io) {
 			    subapp = express(),
 			    subio = io.of('/' + m)
 
-			subapp.config = app.config[m]
+			subapp.config = app.config[m] || {}
+			subapp.config.global = app.config.global
+			
 			mod = require('./' + m)
 
 			if (mod.init) {
