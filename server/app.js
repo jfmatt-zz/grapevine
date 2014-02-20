@@ -30,6 +30,6 @@ app.configure(function () {
 })
 
 app.start = function () {
-	server.listen(app.config.port)
-	console.log("Grapevine running in " + app.config.env + " mode on port " + app.config.port)
+	server.listen(app.config.PORT)
+	console.log("Grapevine running in " + app.config.env + " mode on port " + app.config.PORT)
 }
